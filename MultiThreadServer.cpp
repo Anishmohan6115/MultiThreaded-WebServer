@@ -121,7 +121,7 @@ void *  handle_connection(void *p_client_socket) {
     int client_socket = *((int *)p_client_socket);
     free(p_client_socket);
 
-    pthread_mutex_lock(&lock2);
+    //pthread_mutex_lock(&lock2);
 
     char buffer[30000] ;
     
@@ -216,7 +216,7 @@ void *  handle_connection(void *p_client_socket) {
     }else if (parse_string_method[0] == 'P' && parse_string_method[1] == 'O' && parse_string_method[2] == 'S' && parse_string_method[3] == 'T'){
         //Handle POST Requests
     }
-    pthread_mutex_unlock(&lock2);
+    //pthread_mutex_unlock(&lock2);
         close(client_socket);//since the request type is mainly HTTP/1.1 we should not be closing this connection until we have fewer clients(less than the number of threads)
         free(copy);
         free(copy_head);
@@ -285,9 +285,7 @@ int send_message(int fd, char file_path[], char head[]){
         //if requested file is not found display a page showing causes of error
         file_path = (char*)"./htmlfiles/Error.html\0";
         head = (char*)"HTTP/1.1 200 Ok\r\nContent-Type: text/html\r\n\r\n";
-        //pthread_mutex_lock(&lock2);
         fdimg = open(file_path, O_RDONLY);
-        //pthread_mutex_unlock(&lock2);
 
     }
 

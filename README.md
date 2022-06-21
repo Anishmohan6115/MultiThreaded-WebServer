@@ -43,6 +43,11 @@ We can see there is a lot of information in the Client request but, we only need
 
 So, we can parse the first line and create a header accordingly, if the file exists in the root directory then we will send it to the client. Else, i have made a error page which shows that the typed url is incorrect.
 
+## Demo Video
+
+- [Drive Link](https://drive.google.com/file/d/1aoKskz2BUXBRiEaAuh1nrMaeUpFX_xeA/view?usp=sharing)
+
+This is a small demo for better understanding of this project.
 ## Resources/References
 
 These are links to blog posts, stack overflow pages which helped me a lot during this project.
